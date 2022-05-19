@@ -91,7 +91,7 @@ The playbook implements the following tasks:
         name: docker
         state: present
 ```
-- Increaces memory
+- Increases memory
 ```yml
    - name: Use more memory
       sysctl:
@@ -100,13 +100,25 @@ The playbook implements the following tasks:
         state: present
         reload: yes
 ```
-- text
+- Downloads and lanches elk container 
 ```yml
-
+- name: download and launch a docker elk container
+      docker_container:
+        name: elk
+        image: sebp/elk:761
+        state: started
+        restart_policy: always
+        published_ports:
+          - 5601:5601
+          - 9200:9200
+          - 5044:5044
 ```
-- text
+- Enable service docker on boot
 ```yml
-
+- name: Enable service docker on boot
+      systemd:
+        name: docker
+        enabled: yes
 ```
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
