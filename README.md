@@ -91,7 +91,23 @@ The playbook implements the following tasks:
         name: docker
         state: present
 ```
+- Increaces memory
+```yml
+   - name: Use more memory
+      sysctl:
+        name: vm.max_map_count
+        value: "262144"
+        state: present
+        reload: yes
+```
+- text
+```yml
 
+```
+- text
+```yml
+
+```
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
