@@ -32,14 +32,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Web 1    | Websever | 10.0.0.4   | Linux            |
+| Web 2    | Webserver| 10.0.0.5   | Linux            |
+| Elk      | Webserver| 10.0.0.6   | Linux            |
 
 ### Access Policies
 
@@ -55,10 +54,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-| Web-1    |                     |                      |
-|          |                     |                      |
-
+| Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
+| Web-1    | NO                  |                      |
+|          | NO                  |                      |
+|          | NO                  |                      |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
