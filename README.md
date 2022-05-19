@@ -67,7 +67,7 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - The Advantage of automating configuration with ansible is preventing from having to configure Elk manually. This not only streamlined the process, but deployes a     reliable and efficient Elk server.
 
--[Elk Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/install-elk.yml)
+- [Elk Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/install-elk.yml)
 
 The playbook implements the following tasks:
 - 
