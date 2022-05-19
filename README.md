@@ -78,6 +78,19 @@ The playbook implements the following tasks:
         name: docker.io
         state: present
 ```
+- Installs pip3 & docker module
+```yml
+- name: Install pip3
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+
+    - name: Install Docker python module
+      pip:
+        name: docker
+        state: present
+```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
