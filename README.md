@@ -38,10 +38,10 @@ The configuration details of each machine may be found below.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| Web 1    | Websever | 10.0.0.4   | Linux            |
-| Web 2    | Webserver| 10.0.0.5   | Linux            |
-| Elk      | Webserver| 10.0.0.6   | Linux            |
+| JumpBox  | Gateway  | 10.0.0.1   | Linux            |
+| Web-1    | Websever | 10.0.0.4   | Linux            |
+| Web-2    | Webserver| 10.0.0.5   | Linux            |
+| Elk-VM   | Webserver| 10.1.0.4   | Linux            |
 
 ### Access Policies
 
@@ -57,10 +57,10 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
+| JumpBox  | Yes                 | 10.0.0.1 10.0.0.2    |
 | Web-1    | NO                  |                      |
-|          | NO                  |                      |
-|          | NO                  |                      |
+| Web-2    | NO                  |                      |
+| Elk-VM   | NO                  |                      |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
