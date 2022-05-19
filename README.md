@@ -70,8 +70,14 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - [Elk Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/install-elk.yml)
 
 The playbook implements the following tasks:
-- 
-
+- Installs docker.io
+```yml
+- name: Install docker.io
+      apt:
+        update_cache: yes
+        name: docker.io
+        state: present
+```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
