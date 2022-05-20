@@ -134,7 +134,8 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- 
+- Filebeat is a shipper for forwarding and centralizing log data. It can monitor log files and locations that the user specifies. It can also collect log events then forwards them to elasticsearch or logstash for indexing. 
+- Metricbeat is a shipper that you install on your server to collect metrics from the operating system from the services on the server. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
