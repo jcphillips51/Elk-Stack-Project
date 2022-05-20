@@ -152,7 +152,7 @@ SSH into the control node and follow the steps below:
 [elk]
 10.2.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to Kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
