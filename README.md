@@ -1,5 +1,5 @@
 # Elk-Stack-Project
-The configuration of an ELK Stack server in order to set up a cloud monitoring system.
+An automated Azure security monitoring environment using the ELK Stack, Ansible, Docker, Filebeat, and Metricbeat to centralize system logs and metrics from monitored Linux web servers.
 
 ## Automated ELK Stack Deployment
 
@@ -7,15 +7,15 @@ The files in this repository were used to configure the network depicted below.
 
 ![](Diagrams/CloudSecurityDiagram.PNG)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the select file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above. Alternatively, select portions of the files may be used to install only certain pieces of it, such as Filebeat.
 
-  - [Anisble Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/pentest.yml)
+  - [Ansible Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/pentest.yml)
   - [Metricbeat Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/metricbeat-playbook.yml)
   - [Filebeat Playbook](https://github.com/jcphillips51/Elk-Stack-Project/blob/main/Ansible/Filebeat-playbook.yml) 
 
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -27,15 +27,15 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
-- The load balancer analyzes incoming traffic and then determines what server to send it to. This makes it very useful against denial of service attacks(DDoS).
+Load balancing ensures that the application is highly available and restricts access to the network.
+- The load balancer analyzes incoming traffic and then determines what server to send it to. This makes it very useful against denial-of-service attacks (DDoS).
 - The Jump Box is useful because it can limit the access of the public to your virtual network. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the files and system logs.
 - Filebeat watches for any changes to the files on the server. 
 - Metricbeat records the operating system and services on the server. 
 
-The configuration details of each machine may be found below.
+The configuration details for each machine are below.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -62,10 +62,10 @@ A summary of the access policies in place can be found in the table below.
 | Web-1    | NO                  | 10.0.0.1             |
 | Web-2    | NO                  | 10.0.0.1             |
 | Elk-VM   | NO                  | 10.0.0.1             |
-### Elk Configuration
+### ELK Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- The Advantage of automating configuration with ansible is preventing from having to configure Elk manually. This not only streamlined the process, but deployes a     reliable and efficient Elk server.
+- The Advantage of automating configuration with Ansible is preventing from having to configure ELK manually. This not only streamlined the process, but deployes a     reliable and efficient ELK server.
 
 
 The playbook implements the following tasks:
@@ -86,7 +86,7 @@ The playbook implements the following tasks:
         name: python3-pip
         state: present
 
-    - name: Install Docker python module
+    - name: Install Docker Python module
       pip:
         name: docker
         state: present
@@ -100,7 +100,7 @@ The playbook implements the following tasks:
         state: present
         reload: yes
 ```
-- Downloads and lanches elk container 
+- Downloads and launches ELK container 
 ```yml
 - name: download and launch a docker elk container
       docker_container:
@@ -113,9 +113,9 @@ The playbook implements the following tasks:
           - 9200:9200
           - 5044:5044
 ```
-- Enable service docker on boot
+- Enable Docker on boot
 ```yml
-- name: Enable service docker on boot
+- name: Enable Docker on boot
       systemd:
         name: docker
         enabled: yes
@@ -134,8 +134,8 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Filebeat is a shipper for forwarding and centralizing log data. It can monitor log files and locations that the user specifies. It can also collect log events then forwards them to elasticsearch or logstash for indexing. 
-- Metricbeat is a shipper that you install on your server to collect metrics from the operating system from the services on the server. Metricbeats takes those metrics ands statistics and sends them to the output the user specifies.  
+- Filebeat is a shipper for forwarding and centralizing log data. It can monitor log files and locations that the user specifies. It can also collect log events and then forward them to Elasticsearch or Logstash for indexing. 
+- Metricbeat is a shipper that you install on your server to collect metrics from the operating system and the services on the server. Metricbeat takes those metrics and statistics and sends them to the output the user specifies.  
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
