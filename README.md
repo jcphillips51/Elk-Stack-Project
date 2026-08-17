@@ -1,4 +1,4 @@
-# Elk-Stack-Project
+# ELK-Stack-Project - CyberSecurity Bootcamp Project 2022
 An automated Azure security monitoring environment using the ELK Stack, Ansible, Docker, Filebeat, and Metricbeat to centralize system logs and metrics from monitored Linux web servers.
 
 ## Automated ELK Stack Deployment
